@@ -1,0 +1,16 @@
+<div>
+    <h2>Agregar Comentario</h2>
+    <div>
+        <label for="usuarioId">Usuario ID:</label>
+        <input type="number" id="usuarioId" [(ngModel)]="usuarioId" placeholder="ID del usuario">
+    </div>
+    <div>
+        <label for="casoId">Caso ID:</label>
+        <input type="number" id="casoId" [(ngModel)]="casoId" placeholder="ID del caso">
+    </div>
+    <div>
+        <label for="contenido">Comentario:</label>
+        <textarea id="contenido" [(ngModel)]="contenido" placeholder="Escribe tu comentario"></textarea>
+    </div>
+    <button (click)="agregarComentario()">Agregar Comentario</button>
+</div>

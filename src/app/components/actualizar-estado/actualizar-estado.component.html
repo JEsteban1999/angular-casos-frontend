@@ -1,0 +1,12 @@
+<div>
+    <h2>Actualizar Estado de un Caso</h2>
+    <div>
+        <label for="casoId">ID del Caso:</label>
+        <input type="number" id="casoId" [(ngModel)]="casoId" placeholder="ID del caso">
+    </div>
+    <div>
+        <label for="estado">Nuevo Estado:</label>
+        <input type="text" id="estado" [(ngModel)]="estado" placeholder="Nuevo estado">
+    </div>
+    <button (click)="actualizarEstado()">Actualizar Estado</button>
+</div>

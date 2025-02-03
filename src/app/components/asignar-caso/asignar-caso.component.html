@@ -1,0 +1,12 @@
+<div>
+    <h2>Asignar Caso a Estudiante</h2>
+    <div>
+        <label for="casoId">ID del Caso:</label>
+        <input type="number" id="casoId" [(ngModel)]="casoId" placeholder="ID del caso">
+    </div>
+    <div>
+        <label for="estudiante">Estudiante:</label>
+        <input type="text" id="estudiante" [(ngModel)]="estudiante" placeholder="Nombre del estudiante">
+    </div>
+    <button (click)="asignarCaso()">Asignar Caso</button>
+</div>

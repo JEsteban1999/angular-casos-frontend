@@ -1,0 +1,23 @@
+<div>
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            <label for="usuarioId">Usuario ID:</label>
+            <input type="number" id="usuarioId" [(ngModel)]="casoRequest.usuarioId" name="usuarioId" required>
+        </div>
+        <div>
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" [(ngModel)]="casoRequest.tipo" name="tipo" required>
+        </div>
+        <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" [(ngModel)]="casoRequest.descripcion" name="descripcion" required></textarea>
+        </div>
+        <button type="submit">Registrar Caso</button>
+    </form>
+    <div>
+        <button routerLink="/asignar-caso">Asignar Caso</button>
+        <button routerLink="/actualizar-estado">Actualizar Estado</button>
+        <button routerLink="/listar-casos">Listar Casos</button>
+        <button routerLink="/agregar-comentario">Agregar Comentario</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+    <h2>Listar Casos Asignados</h2>
+    <div>
+        <label for="estudiante">Estudiante:</label>
+        <input type="text" id="estudiante" [(ngModel)]="estudiante" placeholder="Nombre del estudiante">
+        <button (click)="buscarCasos()">Buscar</button>
+    </div>
+    <div *ngIf="casos.length > 0">
+        <h3>Casos Asignados:</h3>
+        <ul>
+            <li *ngFor="let caso of casos">
+                <p><strong>ID:</strong> {{ caso.id }}</p>
+                <p><strong>Tipo:</strong> {{ caso.tipo }}</p>
+                <p><strong>Descripción:</strong> {{ caso.descripcion }}</p>
+                <p><strong>Estado:</strong> {{ caso.estado || 'No asignado' }}</p>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="casos.length === 0 && estudiante">
+        <p>No se encontraron casos asignados para este estudiante.</p>
+    </div>
+</div>
