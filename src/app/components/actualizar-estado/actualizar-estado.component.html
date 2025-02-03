@@ -1,12 +1,29 @@
-<div>
-    <h2>Actualizar Estado de un Caso</h2>
-    <div>
-        <label for="casoId">ID del Caso:</label>
-        <input type="number" id="casoId" [(ngModel)]="casoId" placeholder="ID del caso">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Actualizar Estado de un Caso</h2>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form (ngSubmit)="actualizarEstado()">
+                <div class="mb-3">
+                    <label for="casoId" class="form-label">ID del Caso:</label>
+                    <input type="number" id="casoId" class="form-control" [(ngModel)]="casoId" name="casoId"
+                        placeholder="ID del caso" required />
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Nuevo Estado:</label>
+                    <input type="text" id="estado" class="form-control" [(ngModel)]="estado" name="estado"
+                        placeholder="Nuevo estado" required />
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Actualizar Estado</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="estado">Nuevo Estado:</label>
-        <input type="text" id="estado" [(ngModel)]="estado" placeholder="Nuevo estado">
+
+    <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-outline-primary" routerLink="/asignar-caso">Asignar Caso</button>
+        <button class="btn btn-outline-primary" routerLink="/registrar-caso">Registrar Caso</button>
+        <button class="btn btn-outline-primary" routerLink="/listar-casos">Listar Casos</button>
+        <button class="btn btn-outline-primary" routerLink="/agregar-comentario">Agregar Comentario</button>
     </div>
-    <button (click)="actualizarEstado()">Actualizar Estado</button>
 </div>

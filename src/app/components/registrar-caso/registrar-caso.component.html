@@ -1,23 +1,32 @@
-<div>
-    <form (ngSubmit)="onSubmit()">
-        <div>
-            <label for="usuarioId">Usuario ID:</label>
-            <input type="number" id="usuarioId" [(ngModel)]="casoRequest.usuarioId" name="usuarioId" required>
+<div class="container mt-5">
+    <!-- Formulario para Registrar Caso -->
+     <h2 class="text-center mb-3">Registrar Caso</h2>
+    <form (ngSubmit)="onSubmit()" class="mb-4">
+        <div class="mb-3">
+            <label for="usuarioId" class="form-label">Usuario ID:</label>
+            <input type="number" id="usuarioId" class="form-control" [(ngModel)]="casoRequest.usuarioId"
+                name="usuarioId" placeholder="ID del usuario" required />
         </div>
-        <div>
-            <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" [(ngModel)]="casoRequest.tipo" name="tipo" required>
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo:</label>
+            <input type="text" id="tipo" class="form-control" [(ngModel)]="casoRequest.tipo" name="tipo"
+                placeholder="Tipo de caso" required />
         </div>
-        <div>
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" [(ngModel)]="casoRequest.descripcion" name="descripcion" required></textarea>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción:</label>
+            <textarea id="descripcion" class="form-control" [(ngModel)]="casoRequest.descripcion" name="descripcion"
+                placeholder="Descripción del caso" rows="4" required></textarea>
         </div>
-        <button type="submit">Registrar Caso</button>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Registrar Caso</button>
+        </div>
     </form>
-    <div>
-        <button routerLink="/asignar-caso">Asignar Caso</button>
-        <button routerLink="/actualizar-estado">Actualizar Estado</button>
-        <button routerLink="/listar-casos">Listar Casos</button>
-        <button routerLink="/agregar-comentario">Agregar Comentario</button>
+
+    <!-- Botones de Navegación -->
+    <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-outline-primary" routerLink="/asignar-caso">Asignar Caso</button>
+        <button class="btn btn-outline-primary" routerLink="/actualizar-estado">Actualizar Estado</button>
+        <button class="btn btn-outline-primary" routerLink="/listar-casos">Listar Casos</button>
+        <button class="btn btn-outline-primary" routerLink="/agregar-comentario">Agregar Comentario</button>
     </div>
 </div>

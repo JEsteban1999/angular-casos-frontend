@@ -1,22 +1,45 @@
-<div>
-    <h2>Listar Casos Asignados</h2>
-    <div>
-        <label for="estudiante">Estudiante:</label>
-        <input type="text" id="estudiante" [(ngModel)]="estudiante" placeholder="Nombre del estudiante">
-        <button (click)="buscarCasos()">Buscar</button>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Listar Casos Asignados</h2>
+
+    <!-- Formulario de Búsqueda -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" id="estudiante" class="form-control" [(ngModel)]="estudiante"
+                    placeholder="Nombre del estudiante" />
+                <button class="btn btn-primary" (click)="buscarCasos()">Buscar</button>
+            </div>
+        </div>
     </div>
-    <div *ngIf="casos.length > 0">
-        <h3>Casos Asignados:</h3>
-        <ul>
-            <li *ngFor="let caso of casos">
-                <p><strong>ID:</strong> {{ caso.id }}</p>
-                <p><strong>Tipo:</strong> {{ caso.tipo }}</p>
-                <p><strong>Descripción:</strong> {{ caso.descripcion }}</p>
-                <p><strong>Estado:</strong> {{ caso.estado || 'No asignado' }}</p>
-            </li>
-        </ul>
+
+    <!-- Lista de Casos Asignados -->
+    <div *ngIf="casos.length > 0" class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="text-center mb-3">Casos Asignados:</h3>
+            <ul class="list-group">
+                <li *ngFor="let caso of casos" class="list-group-item mb-3">
+                    <p><strong>ID:</strong> {{ caso.id }}</p>
+                    <p><strong>Tipo:</strong> {{ caso.tipo }}</p>
+                    <p><strong>Descripción:</strong> {{ caso.descripcion }}</p>
+                    <p><strong>Estado:</strong> {{ caso.estado || 'No asignado' }}</p>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div *ngIf="casos.length === 0 && estudiante">
-        <p>No se encontraron casos asignados para este estudiante.</p>
+
+    <!-- Mensaje si no hay casos -->
+    <div *ngIf="casos.length === 0 && estudiante" class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <div class="alert alert-warning text-center" role="alert">
+                No se encontraron casos asignados para este estudiante.
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-outline-primary" routerLink="/asignar-caso">Asignar Caso</button>
+        <button class="btn btn-outline-primary" routerLink="/actualizar-estado">Actualizar Estado</button>
+        <button class="btn btn-outline-primary" routerLink="/regitrar-caso">Registrar Caso</button>
+        <button class="btn btn-outline-primary" routerLink="/agregar-comentario">Agregar Comentario</button>
     </div>
 </div>

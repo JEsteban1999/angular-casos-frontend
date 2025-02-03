@@ -3,12 +3,13 @@ import { CasoService } from '../../services/caso.service';
 import { Caso } from '../../models/caso.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listar-casos',
   templateUrl: './listar-casos.component.html',
   styleUrls: ['./listar-casos.component.css'],
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   standalone: true
 })
 export class ListarCasosComponent implements OnInit {

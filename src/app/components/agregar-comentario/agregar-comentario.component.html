@@ -1,16 +1,41 @@
-<div>
-    <h2>Agregar Comentario</h2>
-    <div>
-        <label for="usuarioId">Usuario ID:</label>
-        <input type="number" id="usuarioId" [(ngModel)]="usuarioId" placeholder="ID del usuario">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Agregar Comentario</h2>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form (ngSubmit)="agregarComentario()">
+                <!-- Campo Usuario ID -->
+                <div class="mb-3">
+                    <label for="usuarioId" class="form-label">Usuario ID:</label>
+                    <input type="number" id="usuarioId" class="form-control" [(ngModel)]="usuarioId" name="usuarioId"
+                        placeholder="ID del usuario" required />
+                </div>
+
+                <!-- Campo Caso ID -->
+                <div class="mb-3">
+                    <label for="casoId" class="form-label">Caso ID:</label>
+                    <input type="number" id="casoId" class="form-control" [(ngModel)]="casoId" name="casoId"
+                        placeholder="ID del caso" required />
+                </div>
+
+                <!-- Campo Comentario -->
+                <div class="mb-3">
+                    <label for="contenido" class="form-label">Comentario:</label>
+                    <textarea id="contenido" class="form-control" [(ngModel)]="contenido" name="contenido"
+                        placeholder="Escribe tu comentario" rows="4" required></textarea>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="casoId">Caso ID:</label>
-        <input type="number" id="casoId" [(ngModel)]="casoId" placeholder="ID del caso">
+
+    <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-outline-primary" routerLink="/asignar-caso">Asignar Caso</button>
+        <button class="btn btn-outline-primary" routerLink="/actualizar-estado">Actualizar Estado</button>
+        <button class="btn btn-outline-primary" routerLink="/listar-casos">Listar Casos</button>
+        <button class="btn btn-outline-primary" routerLink="/registrar-caso">Registrar Caso</button>
     </div>
-    <div>
-        <label for="contenido">Comentario:</label>
-        <textarea id="contenido" [(ngModel)]="contenido" placeholder="Escribe tu comentario"></textarea>
-    </div>
-    <button (click)="agregarComentario()">Agregar Comentario</button>
 </div>

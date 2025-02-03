@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { CasoService } from '../../services/caso.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-actualizar-estado',
   templateUrl: './actualizar-estado.component.html',
   styleUrls: ['./actualizar-estado.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, RouterLink]
 })
 export class ActualizarEstadoComponent {
   casoId: number = 0;

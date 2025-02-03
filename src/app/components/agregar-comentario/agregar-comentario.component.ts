@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { ComentarioService } from '../../services/comentario.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-comentario',
   templateUrl: './agregar-comentario.component.html',
   styleUrls: ['./agregar-comentario.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, RouterLink]
 })
 export class AgregarComentarioComponent {
   usuarioId: number = 0;
